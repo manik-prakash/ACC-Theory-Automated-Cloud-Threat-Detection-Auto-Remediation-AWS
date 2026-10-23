@@ -1,0 +1,2 @@
+# Only needed to run tests/test_lambdas.py (boto3 is mocked, so nothing is required).
+# The Lambda runtime provides boto3 itself, so the deployed functions have no dependencies.

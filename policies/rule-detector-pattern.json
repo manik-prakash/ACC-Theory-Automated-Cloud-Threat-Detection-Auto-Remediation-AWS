@@ -1,0 +1,6 @@
+{
+  "detail-type": ["AWS API Call via CloudTrail", "AWS Console Sign In via CloudTrail"],
+  "detail": {
+    "eventName": ["StopLogging", "DeleteTrail", "UpdateTrail", "AuthorizeSecurityGroupIngress", "ConsoleLogin"]
+  }
+}

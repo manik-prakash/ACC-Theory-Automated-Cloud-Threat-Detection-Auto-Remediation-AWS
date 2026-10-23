@@ -1,0 +1,5 @@
+# Shell scripts must keep LF endings or they break in Git Bash / Linux
+*.sh text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf

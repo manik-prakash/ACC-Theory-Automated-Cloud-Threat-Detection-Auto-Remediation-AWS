@@ -1,0 +1,29 @@
+# Build output
+build/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets and local AWS config - never commit
+.env
+*.pem
+*.key
+*credentials*
+.aws/
+aws-exports*
+
+# Local overrides and temp
+config.local.sh
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

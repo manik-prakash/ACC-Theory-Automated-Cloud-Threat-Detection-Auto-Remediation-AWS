@@ -1,0 +1,8 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {"Sid": "AllowOwner", "Effect": "Allow", "Principal": {"AWS": "arn:aws:iam::${ACCOUNT_ID}:root"},
+     "Action": ["sns:Publish", "sns:Subscribe", "sns:GetTopicAttributes", "sns:SetTopicAttributes", "sns:ListSubscriptionsByTopic", "sns:DeleteTopic"],
+     "Resource": "${TOPIC_ARN}"}
+  ]
+}

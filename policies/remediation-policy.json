@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {"Sid": "Logs", "Effect": "Allow",
+     "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"],
+     "Resource": ["arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:/aws/lambda/${FN_S3}:*",
+                  "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:/aws/lambda/${FN_DET}:*",
+                  "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:/aws/lambda/${FN_KEY}:*"]},
+    {"Sid": "S3BlockPublicAccess", "Effect": "Allow",
+     "Action": "s3:PutBucketPublicAccessBlock",
+     "Resource": "arn:aws:s3:::ia2-test-bucket-*"},
+    {"Sid": "PublishAlert", "Effect": "Allow",
+     "Action": "sns:Publish", "Resource": "${TOPIC_ARN}"},
+    {"Sid": "TrailSelfHeal", "Effect": "Allow",
+     "Action": "cloudtrail:StartLogging",
+     "Resource": "arn:aws:cloudtrail:${REGION}:${ACCOUNT_ID}:trail/${TRAIL}"},
+    {"Sid": "DisableTestUserKey", "Effect": "Allow",
+     "Action": ["iam:ListAccessKeys", "iam:UpdateAccessKey"],
+     "Resource": "arn:aws:iam::${ACCOUNT_ID}:user/${TEST_USER}"}
+  ]
+}
